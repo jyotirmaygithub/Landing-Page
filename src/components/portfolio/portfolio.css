@@ -1,0 +1,10 @@
+.project-image {
+    transition: filter 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
+  }
+  
+  .project-image:hover {
+    filter: brightness(0.8); /* Reduce brightness on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+    transform: translateX(-5px); /* Move image 5 pixels to the left on hover */
+  }
+  
