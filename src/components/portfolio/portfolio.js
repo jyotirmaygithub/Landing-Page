@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import image1 from "../../assets/image1.png";
-import image2 from "../../assets/image2.png";
-import image3 from "../../assets/image3.png";
-import image4 from "../../assets/image1.png";
-import image5 from "../../assets/image1.png";
+import image1 from "../../assets/image.png";
+import image2 from "../../assets/wearables.png";
+import image3 from "../../assets/great-jones .png";
+import image4 from "../../assets/sanitary.png";
+import image5 from "../../assets/webflow.png";
 import "./portfolio.css"; // Import CSS for custom styling
 
 const Portfolio = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fab } from '@mui/material';
+import { Fab, Tooltip } from '@mui/material';
 import ChatIcon from '@mui/icons-material/Chat';
 
 const ChatbotButton = () => {
@@ -9,18 +9,20 @@ const ChatbotButton = () => {
   };
 
   return (
-    <Fab 
-      color="primary" 
-      aria-label="chat" 
-      style={{
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-      }}
-      onClick={handleClick}
-    >
-      <ChatIcon />
-    </Fab>
+    <Tooltip title="Click to chat with us" arrow>
+      <Fab 
+        color="primary" 
+        aria-label="chat" 
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+        }}
+        onClick={handleClick}
+      >
+        <ChatIcon />
+      </Fab>
+    </Tooltip>
   );
 };
 

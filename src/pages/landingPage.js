@@ -10,6 +10,7 @@ import Footer from "../components/footer";
 import ChatbotButton from "../components/chatBot";
 import TrustedPartnersSection from "../components/trustedPartner";
 import CookieConsent from "../components/cookies";
+import ServiceCard from "../components/serviceCard";
 
 export default function landingPage() {
   return (
@@ -21,6 +22,7 @@ export default function landingPage() {
       <IntroParagraph />
       <DesignShowcase />
       <WhyChooseUs />
+      <ServiceCard/>
       <Portfolio/>
       <OurProcess/>
       <Footer/>
