@@ -19,24 +19,12 @@ const IntroParagraph = () => {
           position: 'relative'
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Welcome to <strong>InnovateTech Solutions</strong>
+        <Typography variant="h2" component="h1" gutterBottom>
+          Welcome to <strong>InnovateTech </strong>
         </Typography>
         <Typography variant="body1" component="p" gutterBottom>
           Our mission is to provide innovative and reliable tech solutions tailored to your business needs.
         </Typography>
-        <Box
-          component="img"
-        //   src={sampleImage}
-          alt="InnovateTech Solutions"
-          sx={{
-            width: '100%',
-            maxWidth: 400,
-            borderRadius: 2,
-            my: 2,
-            mx: 'auto',
-          }}
-        />
         <Grid container justifyContent="center" spacing={2} mt={2}>
           <Grid item>
             <ListItem>

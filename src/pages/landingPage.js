@@ -8,12 +8,16 @@ import Portfolio from "../components/portfolio/portfolio";
 import OurProcess from "../components/content/ourProcess";
 import Footer from "../components/footer";
 import ChatbotButton from "../components/chatBot";
+import TrustedPartnersSection from "../components/trustedPartner";
+import CookieConsent from "../components/cookies";
 
 export default function landingPage() {
   return (
     <div>
+      <CookieConsent/>
       <Navbar />
       <VideoShowcase />
+      <TrustedPartnersSection/>
       <IntroParagraph />
       <DesignShowcase />
       <WhyChooseUs />
