@@ -1,11 +1,12 @@
 import React from 'react';
 import { Fab, Tooltip } from '@mui/material';
 import ChatIcon from '@mui/icons-material/Chat';
+import { useNavigate } from "react-router-dom";
 
-const ChatbotButton = () => {
+export default function ChatbotButton(){
+  const navigate = useNavigate()
   const handleClick = () => {
-    // Handle the click event to open chatbot
-    console.log("Chatbot button clicked");
+    navigate('contact')
   };
 
   return (
@@ -25,5 +26,3 @@ const ChatbotButton = () => {
     </Tooltip>
   );
 };
-
-export default ChatbotButton;
