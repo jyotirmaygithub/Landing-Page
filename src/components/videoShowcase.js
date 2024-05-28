@@ -32,11 +32,10 @@ const VideoShowcase = () => {
           transform: 'translate(-50%, -50%)',
           color: 'white',
           textAlign: 'center',
-          // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: adds a semi-transparent background for better text readability
-          padding: 2, // Optional: adds some padding around the text
+          padding: 2, 
         }}
       >
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom style={{fontWeight: 900}}>
           Web Design Services
         </Typography>
         <Typography variant="h5" component="h2">

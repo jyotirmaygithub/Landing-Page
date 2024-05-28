@@ -1,14 +1,10 @@
-// src/components/DesignShowcase.js
 import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
-import designImage1 from '../../assets/image1.png'; // Replace with the path to your image
+import { Box, Container } from '@mui/material';
+import designImage1 from '../../assets/image1.png';
 
 const DesignShowcase = () => {
   return (
-    <Container maxWidth="lg" sx={{ my: 4 }}>
-      <Typography variant="h4" component="h2" gutterBottom textAlign="center" className='text-white'>
-        Our Creative Design
-      </Typography>
+    <Container maxWidth="lg">
       <Box
         component="img"
         src={designImage1}

@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
-import { Typography, Card, CardContent, CardMedia } from '@mui/material';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import image1 from '../assets/image.png';
-import image2 from '../assets/audi-logo-1.png';
-import image3 from '../assets/audi-logo-1.png';
-import image4 from '../assets/citibank-logo.png';
-import image5 from '../assets/audi-logo-1.png';
+import React from "react";
+import { Container, Typography, Button } from "@mui/material";
+import { ArrowForward } from "@mui/icons-material";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Image1 from "../assets/marketing.webp";
+import Image2 from "../assets/figma.webp";
+import Image3 from "../assets/webflow.webp";
+import Image4 from "../assets/web.jpg";
 
 const services = [
   {
-    image: image1,
-    title: 'Responsive Design',
-    description: 'Creating responsive websites that look great on any device.',
+    title: "Custom Website Design:",
+    description:
+      "Create unique, visually appealing website designs tailored to the clients brand and goals.",
+    imageUrl: Image1,
   },
   {
-    image: image2,
-    title: 'E-commerce Solutions',
-    description: 'Developing secure and efficient e-commerce platforms.',
+    title: "Responsive Design",
+    description:
+      "We create websites that look great on any device, ensuring a seamless experience for all users.",
+    imageUrl: Image3,
   },
   {
-    image: image3,
-    title: 'SEO Optimization',
-    description: 'Improving your site’s visibility on search engines.',
+    title: "E-Commerce Solutions",
+    description:
+      "I create secure online stores with full e-commerce functionality.",
+    imageUrl: Image4,
   },
   {
-    image: image4,
-    title: 'Content Management',
-    description: 'Easy-to-use content management systems.',
-  },
-  {
-    image: image5,
-    title: 'Custom Web Applications',
-    description: 'Building custom web applications tailored to your needs.',
+    title: "UI/UX Design",
+    description:
+      "Focus on user experience (UX) by creating intuitive navigation and interactive elements.",
+    imageUrl: Image2,
   },
 ];
 
@@ -56,56 +55,49 @@ const responsive = {
 };
 
 const ServicesSection = () => {
-  const [autoPlay, setAutoPlay] = useState(true);
-
   return (
-    <div className="p-4 text-black">
-      <Typography variant="h3" className="text-center my-5" gutterBottom>
-        Our Web Designing Services
-      </Typography>
+    <Container>
       <Carousel
         responsive={responsive}
-        swipeable={true}
-        draggable={true}
-        showDots={true}
-        ssr={true} // means to render carousel on server-side
         infinite={true}
-        autoPlay={autoPlay}
-        autoPlaySpeed={1000}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
+        className="carousel-container"
       >
         {services.map((service, index) => (
-          <Card
-            className="m-4"
+          <div
             key={index}
-            onMouseEnter={() => setAutoPlay(false)}
-            onMouseLeave={() => setAutoPlay(true)}
+            className="p-4 border border-gray-200  shadow-sm mx-2 bg-white space-y-5"
           >
-            <CardMedia
-              component="img"
+            <img
+              src={service.imageUrl}
               alt={service.title}
-              height="140"
-              image={service.image}
-              title={service.title}
+              className="w-full h-60 object-cover mb-4"
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {service.title}
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                {service.description}
-              </Typography>
-            </CardContent>
-          </Card>
+            <Typography
+              variant="h6"
+              component="h3"
+              className="text-gray-800 mb-2"
+              style={{ fontWeight: 800 }}
+            >
+              {service.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              className="text-gray-600
+            "
+            >
+              {service.description}
+            </Typography>
+            <Typography
+              variant="body2"
+              className="text-gray-600"
+              style={{ fontWeight: 600 }}
+            >
+              Learn more <ArrowForward />
+            </Typography>
+          </div>
         ))}
       </Carousel>
-    </div>
+    </Container>
   );
 };
 

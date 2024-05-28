@@ -8,7 +8,7 @@ const trustedPartners = [image1, image2, image3, image4];
 
 const TrustedPartnersSection = () => {
   return (
-    <div className="flex flex-wrap justify-around my-10">
+    <div className="flex flex-wrap justify-around my-14">
       {trustedPartners.map((partner, index) => (
         <div className="">
             <img

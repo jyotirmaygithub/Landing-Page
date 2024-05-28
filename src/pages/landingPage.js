@@ -6,11 +6,11 @@ import WhyChooseUs from "../components/content/whyChoose";
 import DesignShowcase from "../layout/designShowcase";
 import Portfolio from "../components/portfolio/portfolio";
 import OurProcess from "../components/content/ourProcess";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import ChatbotButton from "../components/chatBot";
 import TrustedPartnersSection from "../components/trustedPartner";
 import CookieConsent from "../components/cookies";
-import ServiceCard from "../components/serviceCard";
+import ServicesSection from "../layout/services";
 
 export default function landingPage() {
   return (
@@ -22,9 +22,9 @@ export default function landingPage() {
       <IntroParagraph />
       <DesignShowcase />
       <WhyChooseUs />
-      <ServiceCard/>
-      <Portfolio/>
+      <ServicesSection/>
       <OurProcess/>
+      <Portfolio/>
       <Footer/>
       <ChatbotButton/>
     </div>

@@ -6,7 +6,7 @@ import image2 from "../../assets/wearables.png";
 import image3 from "../../assets/great-jones .png";
 import image4 from "../../assets/sanitary.png";
 import image5 from "../../assets/webflow.png";
-import "./portfolio.css"; // Import CSS for custom styling
+import "./portfolio.css";
 
 const Portfolio = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -22,7 +22,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div style={{ marginTop: "40px", marginBottom: "40px" }}>
+    <div className="my-14">
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -67,7 +67,7 @@ const Portfolio = () => {
             key={index}
             src={image}
             alt={`Project ${index + 1}`}
-            className="project-image" // Apply custom CSS class for styling
+            className="project-image" 
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
           />

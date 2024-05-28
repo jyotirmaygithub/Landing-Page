@@ -1,14 +1,14 @@
 // src/components/IntroParagraph.js
 import React from 'react';
-import { Typography, Box, Container, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Typography, Box, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import ComputerIcon from '@mui/icons-material/Computer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import StarIcon from '@mui/icons-material/Star';
-// import sampleImage from './path/to/your/image.jpg'; // Replace with the path to your image
 
 const IntroParagraph = () => {
   return (
-    <Container maxWidth="md">
+    <div className='my-14'>
+
       <Box 
         sx={{ 
           bgcolor: 'black', 
@@ -18,8 +18,9 @@ const IntroParagraph = () => {
           textAlign: 'center',
           position: 'relative'
         }}
+        
       >
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom style={{fontWeight:900}}>
           Welcome to <strong>InnovateTech </strong>
         </Typography>
         <Typography variant="body1" component="p" gutterBottom>
@@ -52,7 +53,7 @@ const IntroParagraph = () => {
           </Grid>
         </Grid>
       </Box>
-    </Container>
+        </div>
   );
 };
 
