@@ -22,7 +22,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="my-14">
+    <div className="my-20">
       <Carousel
         additionalTransfrom={0}
         arrows

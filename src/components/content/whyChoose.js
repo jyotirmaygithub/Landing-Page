@@ -26,7 +26,10 @@ const WhyChooseUs = () => {
         fontWeight="bold"
         color="white"
         align="center"
-        style={{fontWeight:900}}
+        sx={{
+          fontWeight: "bold",
+          "@media (max-width:600px)": { fontSize: "2rem" },
+        }}
       >
         Why Choose Us
       </Typography>

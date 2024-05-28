@@ -7,10 +7,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import WebIcon from "@mui/icons-material/Web";
+import { useNavigate } from "react-router-dom";
+
 
 const pages = [
   "Home",
@@ -19,28 +20,21 @@ const pages = [
   "Consulting",
   "Portfolio",
   "Connect",
-];
-const services = ["Logout", "Contact"];
+]
 
 function ResponsiveAppBar() {
+  const navaigate = useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
+  function handleClick(){
+    navaigate("/")
+  }
   return (
     <AppBar
       position="static"
@@ -66,10 +60,11 @@ function ResponsiveAppBar() {
               color: "inherit",
               textDecoration: "none",
             }}
+            className="cursor-pointer"
+            onClick={handleClick}
           >
             InnovateTech
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -81,7 +76,7 @@ function ResponsiveAppBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
+            <Menu 
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -110,8 +105,6 @@ function ResponsiveAppBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -122,6 +115,8 @@ function ResponsiveAppBar() {
               color: "inherit",
               textDecoration: "none",
             }}
+            className="cursor-pointer"
+            onClick={handleClick}
           >
             InnovateTech
           </Typography>
@@ -135,34 +130,6 @@ function ResponsiveAppBar() {
                 {page}
               </Button>
             ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </IconButton>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {services.map((service) => (
-                <MenuItem key={service} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{service}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>

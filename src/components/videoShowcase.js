@@ -35,10 +35,10 @@ const VideoShowcase = () => {
           padding: 2, 
         }}
       >
-        <Typography variant="h2" component="h1" gutterBottom style={{fontWeight: 900}}>
+        <Typography variant="h2" component="h1" gutterBottom  sx={{ fontWeight: 'bold', '@media (max-width:600px)': { fontSize: '2rem' } }}>
           Web Design Services
         </Typography>
-        <Typography variant="h5" component="h2">
+        <Typography variant="h6" component="h2">
           Creating Stunning and Responsive Websites
         </Typography>
       </Box>

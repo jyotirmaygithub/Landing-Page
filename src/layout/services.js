@@ -7,7 +7,7 @@ const ServicesSection = () => {
   return (
     <div className="bg-white py-14">
       <div className='my-14'>
-        <Typography variant="h2" component="h2" gutterBottom className="text-black text-center" style={{fontWeight: 900}}>
+        <Typography variant="h2" component="h2" gutterBottom className="text-black text-center"  sx={{ fontWeight: 'bold', '@media (max-width:600px)': { fontSize: '2rem' } }}>
            Web Designing Services
         </Typography>
         <Typography variant="body1" className="text-gray-600 mb-8 text-center">

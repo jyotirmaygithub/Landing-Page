@@ -12,7 +12,7 @@ const OurProcess = () => {
           variant="h3"
           align="center"
           gutterBottom
-          style={{ fontWeight: 900 }}
+          sx={{ fontWeight: 'bold', '@media (max-width:600px)': { fontSize: '2rem' } }}
         >
           Our Process
         </Typography>

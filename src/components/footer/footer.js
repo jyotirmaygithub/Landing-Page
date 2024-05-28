@@ -18,16 +18,16 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400  hover:text-white cursor-pointer'>
               Home
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400 hover:text-white cursor-pointer'>
               About
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400  hover:text-white cursor-pointer'>
               Services
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400  hover:text-white cursor-pointer'>
               Contact
             </Typography>
           </Grid>
@@ -35,13 +35,13 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Contact Us
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400  hover:text-white cursor-pointer'>
               Email: info@example.com
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400  hover:text-white cursor-pointer'>
               Phone: +1 234 567 890
             </Typography>
-            <Typography variant="body1" className='text-gray-400'>
+            <Typography variant="body1" className='text-gray-400  hover:text-white cursor-pointer' >
               Address: 123 Street Name, City, State, Country
             </Typography>
           </Grid>

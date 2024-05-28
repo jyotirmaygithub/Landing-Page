@@ -1,28 +1,38 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Box, Container } from "@mui/material";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
-  
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const navaigate = useNavigate();
+  const [formDetails, setFormDetails] = useState({
+    email: "",
+    message: "",
+  });
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  function onchange(e) {
+    setFormDetails({ ...formDetails, [e.target.name]: e.target.value });
+  }
 
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Email:", email);
-    console.log("Message:", message);
-    // Reset form
-    setEmail("");
-    setMessage("");
-  };
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formDetails.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    if (formDetails.message.trim() === "") {
+      toast.error("Please enter your message");
+      return;
+    }
+    toast.success("form submitted successfully!");
+    setTimeout(() => {
+      navaigate("/");
+    }, 700);
+    console.log("Form is valid, submitting...");
+  }
 
   return (
     <Box
@@ -48,13 +58,15 @@ const ContactForm = () => {
       <Container maxWidth="sm">
         <form onSubmit={handleSubmit}>
           <TextField
-            label="Email"
-            value={email}
-            onChange={handleEmailChange}
             margin="normal"
+            required
             fullWidth
+            id="email"
+            label="Email"
+            name="email"
+            onChange={onchange}
             variant="outlined"
-            placeholder="Your email"
+            placeholder="Enter Your email"
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -73,12 +85,17 @@ const ContactForm = () => {
               "& .MuiInputLabel-root": {
                 color: "white",
               },
+              "& .MuiFormHelperText-root": {
+                color: "white",
+              },
             }}
           />
           <TextField
             label="Message"
-            value={message}
-            onChange={handleMessageChange}
+            onChange={onchange}
+            required
+            name="message"
+            id="message"
             margin="normal"
             fullWidth
             multiline
@@ -101,6 +118,9 @@ const ContactForm = () => {
                 color: "white",
               },
               "& .MuiInputLabel-root": {
+                color: "white",
+              },
+              "& .MuiFormHelperText-root": {
                 color: "white",
               },
             }}

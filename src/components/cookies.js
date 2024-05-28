@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 
-const CookieConsent = () => {
-  const [visible, setVisible] = useState(true);
+const CookieConsent = ({ message = "We use cookies to improve your experience. By using our site, you accept our use of cookies." }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      setVisible(true);
+    }
+  }, []);
 
   const handleAccept = () => {
-    // Handle the logic for accepting cookies
     console.log('All cookies accepted');
+    localStorage.setItem('cookie-consent', 'accepted');
     setVisible(false);
   };
 
   const handleReject = () => {
-    // Handle the logic for rejecting cookies
     console.log('All cookies rejected');
+    localStorage.setItem('cookie-consent', 'rejected');
     setVisible(false);
-  };
-
+  }
+  
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 bg-white text-black z-20 py-10 flex justify-between items-center">
-      <span>We use cookies to improve your experience. By using our site, you accept our use of cookies.</span>
-      <div className='space-x-5'>
+    <div style={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      padding: '40px',
+      backgroundColor: 'white',
+      color: 'black',
+      zIndex: 20,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+    }}>
+      <span>{message}</span>
+      <div style={{ display: 'flex', gap: '0.5rem' }}>
         <Button 
           variant="contained" 
           style={{ backgroundColor: 'black', color: 'white' }} 
-          className="mr-2" 
           onClick={handleAccept}
         >
           Accept All

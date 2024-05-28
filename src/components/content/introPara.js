@@ -1,4 +1,3 @@
-// src/components/IntroParagraph.js
 import React from 'react';
 import { Typography, Box, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import ComputerIcon from '@mui/icons-material/Computer';
@@ -20,7 +19,7 @@ const IntroParagraph = () => {
         }}
         
       >
-        <Typography variant="h2" component="h1" gutterBottom style={{fontWeight:900}}>
+        <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', '@media (max-width:600px)': { fontSize: '2rem' } }}>
           Welcome to <strong>InnovateTech </strong>
         </Typography>
         <Typography variant="body1" component="p" gutterBottom>
