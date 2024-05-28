@@ -1,27 +1,28 @@
 import React from 'react';
-import { Fab } from '@mui/material';
+import { Fab, Tooltip } from '@mui/material';
 import ChatIcon from '@mui/icons-material/Chat';
+import { useNavigate } from "react-router-dom";
 
-const ChatbotButton = () => {
+export default function ChatbotButton(){
+  const navigate = useNavigate()
   const handleClick = () => {
-    // Handle the click event to open chatbot
-    console.log("Chatbot button clicked");
+    navigate('contact')
   };
 
   return (
-    <Fab 
-      color="primary" 
-      aria-label="chat" 
-      style={{
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-      }}
-      onClick={handleClick}
-    >
-      <ChatIcon />
-    </Fab>
+    <Tooltip title="Click to chat with us" arrow>
+      <Fab 
+        color="primary" 
+        aria-label="chat" 
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+        }}
+        onClick={handleClick}
+      >
+        <ChatIcon />
+      </Fab>
+    </Tooltip>
   );
 };
-
-export default ChatbotButton;

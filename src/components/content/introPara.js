@@ -1,14 +1,13 @@
-// src/components/IntroParagraph.js
 import React from 'react';
-import { Typography, Box, Container, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Typography, Box, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import ComputerIcon from '@mui/icons-material/Computer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import StarIcon from '@mui/icons-material/Star';
-// import sampleImage from './path/to/your/image.jpg'; // Replace with the path to your image
 
 const IntroParagraph = () => {
   return (
-    <Container maxWidth="md">
+    <div className='my-14'>
+
       <Box 
         sx={{ 
           bgcolor: 'black', 
@@ -18,25 +17,14 @@ const IntroParagraph = () => {
           textAlign: 'center',
           position: 'relative'
         }}
+        
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Welcome to <strong>InnovateTech Solutions</strong>
+        <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', '@media (max-width:600px)': { fontSize: '2rem' } }}>
+          Welcome to <strong>InnovateTech </strong>
         </Typography>
         <Typography variant="body1" component="p" gutterBottom>
           Our mission is to provide innovative and reliable tech solutions tailored to your business needs.
         </Typography>
-        <Box
-          component="img"
-        //   src={sampleImage}
-          alt="InnovateTech Solutions"
-          sx={{
-            width: '100%',
-            maxWidth: 400,
-            borderRadius: 2,
-            my: 2,
-            mx: 'auto',
-          }}
-        />
         <Grid container justifyContent="center" spacing={2} mt={2}>
           <Grid item>
             <ListItem>
@@ -64,7 +52,7 @@ const IntroParagraph = () => {
           </Grid>
         </Grid>
       </Box>
-    </Container>
+        </div>
   );
 };
 

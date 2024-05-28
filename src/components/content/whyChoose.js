@@ -17,15 +17,19 @@ const WhyChooseUs = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        my: 8,
+        my: 14,
       }}
     >
       <Typography
-        variant="h4"
+        variant="h2"
         gutterBottom
         fontWeight="bold"
         color="white"
         align="center"
+        sx={{
+          fontWeight: "bold",
+          "@media (max-width:600px)": { fontSize: "2rem" },
+        }}
       >
         Why Choose Us
       </Typography>
